@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling the header woth the high scores and Timer */
+header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 30px;
+    font-family: sans-serif;
+    line-height: 1.5;
+    border-bottom: 1px solid grey;
+    line-height: 2;
+    
+}
+header h3 a{
+    text-decoration: none;
+    color: black;
+}
+header h3:hover{
+    background-color: aqua;
+    color: grey;
+}
+#start-box{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    /* opacity: 0; */
+}
+.start-box{
+    opacity: 0;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 100px 0 0 0 ;
+    font-size: 60px;
+}
+.rules{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    padding: 30px 0 0 30px;
+}
+/* Styling the Start Button */
+.startBtn{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+   font-size: 30px;
+   padding: 10px;
+   border: 3px solid purple;
+   border-radius: 15% 15%;
+   background-color: purple;
+   color: plum;
+   margin-top: 50px;
+   margin-right:50px ;
+   cursor: pointer;
+}
+.startBtn:hover{
+    border:none;
+    background-color: royalblue;
+   box-shadow: 0 0.4rem 1.4rem 0 rgba(14, 17, 177, 0.425);
+    
+}
+.high-scores-page h3{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 30px;
+}
+
+/* Applying Styles to the Quiz box containing qns and choices */
+.quiz-box{
+    width: 550px;
+    background: #fff;
+    border: 3px solid black;
+    border-radius: 5px; 
+    margin: 0;
+    padding: 50px;
+    position: relative;
+    top: 50px;
+    opacity: 0;
+}
+.question{
+    width: 100%;
+    padding: 50px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 50px;
+   font-weight: normal;
+   font-style: italic;
+}
+button{
+    display: flex;
+    justify-content: center;
+}
+.choiceBtn{
+   left: 20%;
+    align-items: center;
+    font-size: 30px;
+    padding: 10px;
+    border: 3px solid purple;
+    color: purple;
+    margin:5px 25px ;
+    width: fit-content;
+}
+.choiceBtn:hover{
+    border-radius: 15% 15%;
+    border:none;
+    background-color: royalblue;
+    color: plum;
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}
+
+.correct{
+    background-color: green;
+}
+.wrong{
+    background-color: red;
+}
