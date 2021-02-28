@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Latest Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header including the High Scores and Timer -->
+        <header>
+            <h3 class="high-scores"> <a href="">View High Scores</a></h3>
+            <h3 class="timer" id="timer">Timer</h3>
+        </header>
+
+        <!-- Starter Page -->
+        <section id="start-box">
+            <h2 class="title">Java Script Coding Quiz</h2>
+            <p class="rules">Try to answer the following questions. <br> Keep in mind that a wrong answer will penalize
+                you.
+                <br> Press
+                Start to Begin
+            </p>
+
+            <!-- Start Button -->
+            <button type="submit" class="startBtn" id="startBtn">Start Quiz</button>
+            <!-- On clicking Start button add the quiz page with first qn and start timer (js)-->
+        </section>
+
+        <!-- Quiz section -->
+        <section id="quiz-box">
+            <div id="question">
+                <h2 class="question"></h2>
+                <button class="choiceBtn" id="choices1"></button>
+                <button class="choiceBtn" id="choices2"></button>
+                <button class="choiceBtn" id="choices3"></button>
+                <button class="choiceBtn" id="choices4"></button>
+            </div>
+        </section>
+
+        <div class="response-box">
+            <!-- Display Correct/Wrong -->
+        </div>
+    </div>
+    <!-- <script src="./assets/js/questions.js"></script> -->
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
