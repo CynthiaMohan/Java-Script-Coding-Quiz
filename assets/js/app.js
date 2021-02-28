@@ -6,6 +6,7 @@ let insertchoices1 = document.querySelector("#choice1");
 let insertchoices2 = document.querySelector("#choice2");
 let insertchoices3 = document.querySelector("#choice3");
 let insertchoices4 = document.querySelector("#choice4");
+let clickedAns;
 
 let questions = [
     {
@@ -76,21 +77,27 @@ let nextQuestion = function () {
     qnId++;
 }
 //Check Answers
-let checkAnswer = function (answer) {
-    console.log("answer=>" + answer);
-    if (answer === questions[qnId].answer) {
+let checkAnswer = function (event) {
+    clickedAns = event.target.textContent;
+    console.log("answer=>" + clickedAns);
+
+    if (clickedAns === questions[qnId].answer) {
         console.log("Correct!");
         questionnaire(nextQuestion());
     }
 
-    else {
+    else if (clickedAns !== questions[qnId].answer) {
         console.log("wrong");
-        questionnaire(nextQuestion);
+        questionnaire(nextQuestion());
+        clearInterval(countdownTimer)
+        time -= 10;
+        displayTimer(time);
+
     }
 
 };
 //Insert question
-let questionnaire = function () {
+let questionnaire = function (qnId) {
     displayTimer(time);
     insertQn.textContent = questions[qnId].qn;
     insertchoices1.textContent = questions[qnId].choice1;
@@ -102,7 +109,7 @@ let questionnaire = function () {
     insertchoices4.textContent = questions[qnId].choice4;
     insertchoices4.className = "choiceBtn";
 
-    document.querySelector("Btn").addEventListener('click', checkAnswer());
+    document.querySelector(".answers").addEventListener("click", checkAnswer);
 };
 
 
@@ -112,5 +119,5 @@ startButtonClick.addEventListener('click', function () {
     startQuizBox.classList.add("start-box");
 
     // Display Quiz questionaire
-    questionnaire();
+    questionnaire(qnId);
 });
