@@ -87,7 +87,7 @@ let checkAnswer = function (event) {
     console.log("answer=>" + clickedAns);
 
     if (clickedAns === questions[qnId].answer) {
-        responseEl.textContent = "Correct!";
+        setTimeout(responseEl.textContent = "Correct!", 2000);
         questionnaire(nextQuestion());
     }
 
