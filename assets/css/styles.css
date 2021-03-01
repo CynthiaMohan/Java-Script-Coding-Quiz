@@ -124,6 +124,7 @@ h3 button:hover{
 button{
     display: flex;
     justify-content: center;
+    background-color: white;
 }
 .choiceBtn{
    left: 20%;

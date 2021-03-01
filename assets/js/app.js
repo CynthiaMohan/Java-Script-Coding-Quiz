@@ -14,6 +14,8 @@ let namesEl = document.querySelector(".name");
 let scoresEl = document.querySelector(".score");
 let finalPage = document.querySelector(".final-page");
 let finalPageBox = document.querySelector(".final-page-container");
+let submit = document.querySelector("submittedName");
+// var name = document.getElementsById("initials");
 let clickedAns;
 
 let questions = [
@@ -114,8 +116,8 @@ let checkAnswer = function (event) {
 
 //Save Score
 let saveHighScore = function (score) {
-    // let name = prompt("Enter your initials");
-    localStorage.setItem("Name", name);
+    // let name = document.getElementById(name);
+
     localStorage.setItem("Score", score);
 
 }
@@ -141,11 +143,13 @@ let questionnaire = function () {
     if (qnId === 4) {
         score = time;
         saveHighScore(score);
-        // alert("The Quiz has ended");
+
         quizBox.classList.add("hidden");
         timer.classList.add("hidden");
         responseEl.classList.add("hidden");
+        startQuizBox.classList.add("hidden");
         finalPageBox.classList.remove("hidden");
+        scoresEl.textContent = localStorage.getItem("Score");
     }
 };
 
@@ -161,10 +165,16 @@ startButtonClick.addEventListener('click', function () {
 
 viewHighScore.addEventListener("click", function () {
     let n = localStorage.getItem("Name");
-    let s = localStorage.getItem("Score");
-    console.log(n);
+    let s =
+        console.log(n);
     highScoresEl.classList.remove("hidden");
     // scoresEl.classList.remove("hidden");
     namesEl.textContent = n;
-    scoresEl.textContent = s;
+    scoresEl.textContent = localStorage.getItem("Score");
 });
+
+// submit.addEventListener("click", function () {
+
+//     localStorage.setItem("Name", name);
+
+// });

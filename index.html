@@ -54,8 +54,8 @@
                 <h3>Your final score is <span class="score"></span></h3>
                 <div class="score-board">
                     <label for="name">Enter initials</label>
-                    <input type="text" class="name" id="name" />
-                    <button type="submit">Submit</button>
+                    <input type="text" class="name" id="initials" />
+                    <button type="submit" id="submittedName">Submit</button>
                 </div>
             </div>
 
@@ -65,16 +65,10 @@
 
         <!-- Display initials/name and score -->
         <div class="high-scores-box hidden">
-            <div class="highScores-title">
-                <h1>View High Scores</h1>
-            </div>
+
             <div>
-                <h2>Name :</h2>
-                <h3 class="name"></h3>
-            </div>
-            <div>
-                <h2>Score :</h2>
-                <h3 class="score"></h3>
+                <h2>Name :<span class="name"></span></h2>
+                <h2>Score :<span class="score"></span></h2>
             </div>
 
 
