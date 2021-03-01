@@ -12,7 +12,8 @@ let responseEl = document.querySelector(".response-box");
 let highScoresEl = document.querySelector(".high-scores-box");
 let namesEl = document.querySelector(".name");
 let scoresEl = document.querySelector(".score");
-
+let finalPage = document.querySelector(".final-page");
+let finalPageBox = document.querySelector(".final-page-container");
 let clickedAns;
 
 let questions = [
@@ -113,7 +114,7 @@ let checkAnswer = function (event) {
 
 //Save Score
 let saveHighScore = function (score) {
-    let name = prompt("Enter your initials");
+    // let name = prompt("Enter your initials");
     localStorage.setItem("Name", name);
     localStorage.setItem("Score", score);
 
@@ -140,10 +141,11 @@ let questionnaire = function () {
     if (qnId === 4) {
         score = time;
         saveHighScore(score);
-        alert("The Quiz has ended");
+        // alert("The Quiz has ended");
         quizBox.classList.add("hidden");
         timer.classList.add("hidden");
         responseEl.classList.add("hidden");
+        finalPageBox.classList.remove("hidden");
     }
 };
 
