@@ -117,7 +117,7 @@ let checkAnswer = function (event) {
 
 //Save Score
 let saveHighScore = function (score) {
-    let name = document.getElementById(name);
+    // let name = document.getElementById(name);
 
     localStorage.setItem("Score", score);
 
@@ -142,7 +142,6 @@ let questionnaire = function () {
 
     // Checking for last question
     if (qnId === 4) {
-        console.log(qnId);
         score = time;
         saveHighScore(score);
 
