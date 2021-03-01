@@ -6,9 +6,9 @@
 .container{
    width:80%;
    height: 80%;
-   background-color: rgba(202, 195, 195, 0.377);
+   background-color:white;
    border-radius: 25px;
-   box-shadow: 5px 5px rgba(128, 128, 128, 0.596);
+   /* box-shadow: 5px 5px rgba(128, 128, 128, 0.596); */
    position: absolute;
    top: 50%;
    left:50%;
