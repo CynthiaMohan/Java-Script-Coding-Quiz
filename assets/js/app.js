@@ -6,6 +6,7 @@ let insertchoices1 = document.querySelector("#choice1");
 let insertchoices2 = document.querySelector("#choice2");
 let insertchoices3 = document.querySelector("#choice3");
 let insertchoices4 = document.querySelector("#choice4");
+let responseEl = document.querySelector(".response-box");
 let clickedAns;
 
 let questions = [
@@ -54,9 +55,10 @@ let questions = [
 let time = 60;
 let qnId = 0;
 let answer = " ";
+let countdownTimer;
 //Countdown Timer
-const displayTimer = function (time) {
-    let countdownTimer = setInterval(function () {
+const displayTimer = function () {
+    countdownTimer = setInterval(function () {
 
         console.log("let the quiz begin");
         if (time > 1) {
@@ -73,32 +75,39 @@ const displayTimer = function (time) {
         time--;
     }, 1000);
 };
+
+//go to the next question
 let nextQuestion = function () {
     qnId++;
 }
+
 //Check Answers
 let checkAnswer = function (event) {
     clickedAns = event.target.textContent;
     console.log("answer=>" + clickedAns);
 
     if (clickedAns === questions[qnId].answer) {
-        console.log("Correct!");
+        responseEl.textContent = "Correct!";
         questionnaire(nextQuestion());
     }
 
     else if (clickedAns !== questions[qnId].answer) {
+        debugger;
         console.log("wrong");
         questionnaire(nextQuestion());
-        clearInterval(countdownTimer)
+        clearInterval(countdownTimer);
         time -= 10;
-        displayTimer(time);
-
+        console.log("time is" + time);
+        displayTimer();
     }
 
 };
+
 //Insert question
-let questionnaire = function (qnId) {
-    displayTimer(time);
+let questionnaire = function () {
+    if (qnId === 0) {
+        displayTimer();
+    }
     insertQn.textContent = questions[qnId].qn;
     insertchoices1.textContent = questions[qnId].choice1;
     insertchoices1.className = "choiceBtn";
@@ -119,5 +128,5 @@ startButtonClick.addEventListener('click', function () {
     startQuizBox.classList.add("start-box");
 
     // Display Quiz questionaire
-    questionnaire(qnId);
+    questionnaire();
 });

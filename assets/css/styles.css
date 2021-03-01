@@ -123,13 +123,11 @@ button{
     color: plum;
     cursor: pointer;
 }
-.hidden{
-    display: none;
-}
-
-.correct{
-    background-color: green;
-}
-.wrong{
-    background-color: red;
+.response-box{
+    display: flex;
+    margin-top: 50px;
+    font-size: 40px;
+    font-style: italic;
+    color: rgba(128, 128, 128, 0.25);
+    border-top: 3px solid rgba(128, 128, 128, 0.11);
 }
