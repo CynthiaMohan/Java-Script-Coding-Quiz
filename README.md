@@ -8,7 +8,7 @@ To generate a quiz on the concepts of java script.
 [Java-Script-CodingQuiz]( https://cynthiamohan.github.io/Java-Script-Coding-Quiz/)
 
 ### Mock-up
-![Java-Script-CodingQuiz-FirstPage-Mockup](./assets/images/mock-upfirstpage.jpg)
+![Java-Script-CodingQuiz-FirstPage-Mockup](../assets/images/mock-upfirstpage.jpg)
 
 ### Technologies Used
 * HTML
