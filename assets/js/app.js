@@ -117,7 +117,7 @@ let checkAnswer = function (event) {
 
 //Save Score
 let saveHighScore = function (score) {
-    // let name = document.getElementById(name);
+    let name = document.getElementById(name);
 
     localStorage.setItem("Score", score);
 
