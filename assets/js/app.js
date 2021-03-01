@@ -12,6 +12,7 @@ let responseEl = document.querySelector(".response-box");
 let highScoresEl = document.querySelector(".high-scores-box");
 let namesEl = document.querySelector(".name");
 let scoresEl = document.querySelector(".score");
+let scoresEle = document.querySelector(".score1");
 let finalPage = document.querySelector(".final-page");
 let finalPageBox = document.querySelector(".final-page-container");
 let submit = document.querySelector("submittedName");
@@ -141,6 +142,7 @@ let questionnaire = function () {
 
     // Checking for last question
     if (qnId === 4) {
+        console.log(qnId);
         score = time;
         saveHighScore(score);
 
@@ -164,13 +166,10 @@ startButtonClick.addEventListener('click', function () {
 });
 
 viewHighScore.addEventListener("click", function () {
-    let n = localStorage.getItem("Name");
-    let s =
-        console.log(n);
+    finalPageBox.classList.add("hidden");
     highScoresEl.classList.remove("hidden");
-    // scoresEl.classList.remove("hidden");
-    namesEl.textContent = n;
-    scoresEl.textContent = localStorage.getItem("Score");
+    var n = localStorage.getItem("Score");
+    scoresEle.textContent = n;
 });
 
 // submit.addEventListener("click", function () {
