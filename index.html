@@ -13,7 +13,9 @@
     <div class="container">
         <!-- Header including the High Scores and Timer -->
         <header>
-            <h3 class="high-scores"> <a href="">View High Scores</a></h3>
+            <h3 class="high-scores">
+                <button>View High Scores</button>
+            </h3>
             <h3 class="timer" id="timer">Timer</h3>
         </header>
 
@@ -43,12 +45,30 @@
                 </div>
             </div>
         </section>
-
         <div class="response-box hidden">
             <!-- Display Correct/Wrong -->
         </div>
+
+        <!-- Display initials/name and score -->
+        <div class="high-scores-box hidden">
+            <div class="highScores-title">
+                <h1>View High Scores</h1>
+            </div>
+            <div>
+                <h2>Name :</h2>
+                <h3 class="name"></h3>
+            </div>
+            <div>
+                <h2>Score :</h2>
+                <h3 class="score"></h3>
+            </div>
+
+
+
+
+        </div>
     </div>
-    <!-- <script src="./assets/js/questions.js"></script> -->
+    </div>
     <script src="./assets/js/app.js"></script>
 </body>
 

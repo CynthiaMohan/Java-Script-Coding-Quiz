@@ -1,3 +1,4 @@
+let viewHighScore = document.querySelector(".high-scores");
 let startButtonClick = document.querySelector("#startBtn");
 let startQuizBox = document.querySelector("#start-box");
 let timer = document.querySelector("#timer");
@@ -8,6 +9,10 @@ let insertchoices2 = document.querySelector("#choice2");
 let insertchoices3 = document.querySelector("#choice3");
 let insertchoices4 = document.querySelector("#choice4");
 let responseEl = document.querySelector(".response-box");
+let highScoresEl = document.querySelector(".high-scores-box");
+let namesEl = document.querySelector(".name");
+let scoresEl = document.querySelector(".score");
+
 let clickedAns;
 
 let questions = [
@@ -62,8 +67,6 @@ let score;
 //Countdown Timer
 const displayTimer = function () {
     countdownTimer = setInterval(function () {
-
-        console.log("let the quiz begin");
         if (time > 1) {
             timer.textContent = time + " seconds";
         }
@@ -152,4 +155,14 @@ startButtonClick.addEventListener('click', function () {
 
     // Display Quiz questionaire
     questionnaire();
+});
+
+viewHighScore.addEventListener("click", function () {
+    let n = localStorage.getItem("Name");
+    let s = localStorage.getItem("Score");
+    console.log(n);
+    highScoresEl.classList.remove("hidden");
+    // scoresEl.classList.remove("hidden");
+    namesEl.textContent = n;
+    scoresEl.textContent = s;
 });
