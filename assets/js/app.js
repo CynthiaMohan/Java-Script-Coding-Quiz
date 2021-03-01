@@ -1,6 +1,7 @@
 let startButtonClick = document.querySelector("#startBtn");
 let startQuizBox = document.querySelector("#start-box");
 let timer = document.querySelector("#timer");
+let quizBox = document.querySelector("#quiz-box");
 let insertQn = document.querySelector(".question");
 let insertchoices1 = document.querySelector("#choice1");
 let insertchoices2 = document.querySelector("#choice2");
@@ -56,6 +57,8 @@ let time = 60;
 let qnId = 0;
 let answer = " ";
 let countdownTimer;
+let score;
+
 //Countdown Timer
 const displayTimer = function () {
     countdownTimer = setInterval(function () {
@@ -83,17 +86,19 @@ let nextQuestion = function () {
 
 //Check Answers
 let checkAnswer = function (event) {
+    responseEl.classList.remove("hidden");
     clickedAns = event.target.textContent;
     console.log("answer=>" + clickedAns);
 
     if (clickedAns === questions[qnId].answer) {
-        setTimeout(responseEl.textContent = "Correct!", 2000);
+        responseEl.textContent = "Correct!";
+        setTimeout(() => responseEl.textContent = '', 1000);
         questionnaire(nextQuestion());
     }
 
     else if (clickedAns !== questions[qnId].answer) {
-        debugger;
-        console.log("wrong");
+        // debugger;
+        responseEl.textContent = "Wrong.";
         questionnaire(nextQuestion());
         clearInterval(countdownTimer);
         time -= 10;
@@ -102,6 +107,14 @@ let checkAnswer = function (event) {
     }
 
 };
+
+//Save Score
+let saveHighScore = function (score) {
+    let name = prompt("Enter your initials");
+    localStorage.setItem("Name", name);
+    localStorage.setItem("Score", score);
+
+}
 
 //Insert question
 let questionnaire = function () {
@@ -119,6 +132,16 @@ let questionnaire = function () {
     insertchoices4.className = "choiceBtn";
 
     document.querySelector(".answers").addEventListener("click", checkAnswer);
+
+    // Checking for last question
+    if (qnId === 4) {
+        score = time;
+        saveHighScore(score);
+        alert("The Quiz has ended");
+        quizBox.classList.add("hidden");
+        timer.classList.add("hidden");
+        responseEl.classList.add("hidden");
+    }
 };
 
 
