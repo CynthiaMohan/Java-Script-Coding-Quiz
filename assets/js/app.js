@@ -15,8 +15,8 @@ let scoresEl = document.querySelector(".score");
 let scoresEle = document.querySelector(".score1");
 let finalPage = document.querySelector(".final-page");
 let finalPageBox = document.querySelector(".final-page-container");
-let submit = document.querySelector("submittedName");
-// var name = document.getElementsById("initials");
+let initialsEl = document.querySelector("#initials");
+let submitBtn = document.querySelector(".submit");
 let clickedAns;
 
 let questions = [
@@ -167,12 +167,14 @@ startButtonClick.addEventListener('click', function () {
 viewHighScore.addEventListener("click", function () {
     finalPageBox.classList.add("hidden");
     highScoresEl.classList.remove("hidden");
-    var n = localStorage.getItem("Score");
-    scoresEle.textContent = n;
+    var n = localStorage.getItem("Name");
+    namesEl.textContent = n;
+    var s = localStorage.getItem("Score");
+    scoresEle.textContent = s;
 });
 
-// submit.addEventListener("click", function () {
-
-//     localStorage.setItem("Name", name);
-
-// });
+submitBtn.addEventListener('click', function () {
+    let initialsValue = initialsEl.value;
+    localStorage.setItem("Name", initialsValue);
+    initialsEl.value = " ";
+});
