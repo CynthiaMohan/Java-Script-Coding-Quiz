@@ -207,3 +207,25 @@ button{
 .name{
     font-size: 25px;
 }
+.saved-notification{
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    padding-top:30px;
+    color:rgba(128, 128, 128, 0.37); ;
+
+}
+
+#continue-btn{
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 20px;
+    
+}
+
+#continue-btn:hover:hover{
+    cursor: pointer;
+    background-color: purple;
+    color: plum;
+    border: none;
+}
