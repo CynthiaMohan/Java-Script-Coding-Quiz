@@ -17,6 +17,9 @@ let finalPage = document.querySelector(".final-page");
 let finalPageBox = document.querySelector(".final-page-container");
 let initialsEl = document.querySelector("#initials");
 let submitBtn = document.querySelector(".submit");
+let savedResponse = document.querySelector(".saved-notification");
+let backToQuizBtn = document.getElementById("continue-btn");
+let exitBtn = document.getElementById("exit-btn");
 let clickedAns;
 
 let questions = [
@@ -165,6 +168,8 @@ startButtonClick.addEventListener('click', function () {
 });
 
 viewHighScore.addEventListener("click", function () {
+    startQuizBox.classList.add("hidden");
+    quizBox.classList.add("hidden");
     finalPageBox.classList.add("hidden");
     highScoresEl.classList.remove("hidden");
     var n = localStorage.getItem("Name");
@@ -177,4 +182,10 @@ submitBtn.addEventListener('click', function () {
     let initialsValue = initialsEl.value;
     localStorage.setItem("Name", initialsValue);
     initialsEl.value = " ";
+    savedResponse.textContent = "Saved. Click View High Scores to see your score.";
+});
+
+backToQuizBtn.addEventListener('click', function () {
+    highScoresEl.classList.add("hidden");
+    location.reload();
 });
